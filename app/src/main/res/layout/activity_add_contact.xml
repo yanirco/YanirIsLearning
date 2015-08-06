@@ -24,4 +24,138 @@
         android:layout_alignTop="@+id/cancelsavecontactbutton"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/contactName"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="53dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:text="Full Name" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/contactAdress"
+        android:layout_below="@+id/contactName"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="Full Address" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/contactEmail"
+        android:layout_below="@+id/contactAdress"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:text="E-mail" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:ems="10"
+        android:id="@+id/contactPhone"
+        android:layout_below="@+id/contactEmail"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:text="Phone" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/contctBirthDate"
+        android:layout_below="@+id/contactPhone"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="Birth Day"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="time"
+        android:ems="10"
+        android:id="@+id/contactTimeToCal"
+        android:text="Time"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/addContactTitle"
+        android:layout_toLeftOf="@+id/addContactTitle" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Best Time To Call"
+        android:id="@+id/textView"
+        android:layout_below="@+id/contctBirthDate"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Add Contact"
+        android:id="@+id/addContactTitle"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/ContactTimeToCall"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@+id/contactTimeToCal"
+        android:text="Date  To Call"
+        android:layout_toEndOf="@+id/contactTimeToCal"
+        android:layout_alignLeft="@+id/addContactTitle"
+        android:layout_alignStart="@+id/addContactTitle" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add  Picture"
+        android:id="@+id/contactAddPictureBtn"
+        android:layout_below="@+id/contactTimeToCal"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_above="@+id/savecontactbutton"
+        android:layout_toRightOf="@+id/contactTimeToCal"
+        android:layout_toEndOf="@+id/contactTimeToCal" />
+
+    <QuickContactBadge
+        android:id="@+id/contactImagequickbadge"
+        android:layout_height="80sp"
+        android:layout_width="80sp"
+        android:scaleType="centerCrop"
+        android:layout_alignTop="@+id/contactAddPictureBtn"
+        android:layout_toEndOf="@+id/addContactTitle" />
+
 </RelativeLayout>
