@@ -1,16 +1,19 @@
 package com.example.yanir.middleproject;
-
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
-import android.widget.Button;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 
 public class AddContactActivity extends Activity {
+
+    public static final int REQUEST_IMAGE_CAPTURE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +28,6 @@ public class AddContactActivity extends Activity {
         EditText contactbirthdate = (EditText) findViewById(R.id.contctBirthDate);
         EditText contacttimetocall = (EditText) findViewById(R.id.contactTimeToCal);
         EditText contactdatetocall = (EditText) findViewById(R.id.contactTDateToCall);
-        EditText contactName = (EditText) findViewById(R.id.contactName);
 
     }
 
@@ -35,14 +37,29 @@ public class AddContactActivity extends Activity {
         addContactPictureBtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                final int REQUEST_IMAGE_CAPTURE = 1;
                 Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
                     startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
                 }
+
+
             }
+
         });
 
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+                if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+                    Bundle extras = data.getExtras();
+                    Bitmap imageBitmap;
+                    imageBitmap = (Bitmap) extras.get("data");
+                    ImageView contactimageview = (ImageView) findViewById(R.id.contactImagequickbadge);
+                    contactimageview.setImageBitmap(imageBitmap);
+
+        }
 
     }
 
@@ -57,4 +74,5 @@ public class AddContactActivity extends Activity {
 
 
     }
+
 }
